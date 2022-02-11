@@ -1,0 +1,865 @@
+﻿<Window x:Class="TensorMine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:local="clr-namespace:TensorMine" xmlns:mcheads="clr-namespace:leMaik.McHeads;assembly=leMaik.McHeads"
+        mc:Ignorable="d"
+        Title="TensorMine : Локации"
+        Width="1040" Height="540"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        Initialized="Window_Initialized" Closed="Window_Closed" Loaded="Window_Loaded"
+        Visibility="Visible"
+        IsEnabled="False">
+
+    <Border Width="1040" Height="537" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Black" CornerRadius="10" MouseLeftButtonDown="Window_Movement">
+        <Grid>
+
+            <Border Width="1040" Height="537" x:Name="MainWindowBackground" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
+                <Grid>
+
+                    <Border HorizontalAlignment="Center" VerticalAlignment="Center" Margin="912,0,0,0">
+                        <Grid>
+                            <Rectangle Width="60" Fill="#FFFCB94F">
+                                <Rectangle.Effect>
+                                    <DropShadowEffect Color="#FFFCB94F" Direction="270" BlurRadius="40" Opacity="0.8" ShadowDepth="0" RenderingBias="Quality"/>
+                                </Rectangle.Effect>
+                            </Rectangle>
+
+                            <Image Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" gif:ImageBehavior.AnimatedSource="LavaBlock.gif"/>
+                            <Image Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,58,0,0" gif:ImageBehavior.AnimatedSource="LavaBlock.gif"/>
+                            <Image Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,116,0,0" gif:ImageBehavior.AnimatedSource="LavaBlock.gif"/>
+                            <Image Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,174,0,0" gif:ImageBehavior.AnimatedSource="LavaBlock.gif"/>
+                            <Image Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,232,0,0" gif:ImageBehavior.AnimatedSource="LavaBlock.gif"/>
+                            <Image Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,290,0,0" gif:ImageBehavior.AnimatedSource="LavaBlock.gif"/>
+                            <Image Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,348,0,0" gif:ImageBehavior.AnimatedSource="LavaBlock.gif"/>
+                            <Image Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,406,0,0" gif:ImageBehavior.AnimatedSource="LavaBlock.gif"/>
+                            <Image Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,464,0,0" gif:ImageBehavior.AnimatedSource="LavaBlock.gif"/>
+                            <Image Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,522,0,0" gif:ImageBehavior.AnimatedSource="LavaBlock.gif"/>
+
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="Settings" Width="35" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="913,-320,0,0" CornerRadius="6" BorderThickness="0" BorderBrush="White" Background="#2e2e2e" Opacity="1">
+                        <Grid>
+                            <Viewbox Width="22" Height="22" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="1">
+                                <Canvas Width="24" Height="24">
+                                    <Path Fill="White" Data="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,
+                                      12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,
+                                      5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,
+                                      2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,
+                                      9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,
+                                      15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,
+                                      22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,
+                                      18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" />
+                                </Canvas>
+                            </Viewbox>
+
+                            <Button x:Name="SettingsButton" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" Click="SettingsButton_Click" >
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Button.MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="35" To="38" Storyboard.TargetProperty="Width" Storyboard.TargetName="Settings" Duration="0:0:0.1"></DoubleAnimation>
+                                                <DoubleAnimation From="35" To="38" Storyboard.TargetProperty="Height" Storyboard.TargetName="Settings" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+
+                                    <EventTrigger RoutedEvent="Button.MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="38" To="35" Storyboard.TargetProperty="Width" Storyboard.TargetName="Settings" Duration="0:0:0.1"></DoubleAnimation>
+                                                <DoubleAnimation From="38" To="35" Storyboard.TargetProperty="Height" Storyboard.TargetName="Settings" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="Discord" Width="35" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="913,-200,0,0" CornerRadius="6" BorderThickness="0" BorderBrush="White" Background="#2e2e2e" Opacity="1">
+                        <Grid>
+                            <Viewbox Width="16" Height="16" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-3,0,0">
+                                <Canvas Width="24" Height="24">
+                                    <Path Fill="White" Data="M8 3H16C18.76 3 21 5.24 21 8V16C21 18.76 18.76 21 16 21H8C5.24 21 3 18.76 3 16V8C3 5.24 5.24 3 8 3Z" />
+                                </Canvas>
+                            </Viewbox>
+
+                            <Viewbox Width="21" Height="21" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="1">
+                                <Canvas Width="24" Height="24">
+                                    <Path Fill="#738ADB" Data="M22,24L16.75,19L17.38,21H4.5A2.5,2.5 0 0,1 2,18.5V3.5A2.5,2.5 0 0,1 4.5,1H19.5A2.5,2.5 0 0,1 22,3.5V24M12,
+                                          6.8C9.32,6.8 7.44,7.95 7.44,7.95C8.47,7.03 10.27,6.5 10.27,6.5L10.1,6.33C8.41,6.36 6.88,7.53 6.88,7.53C5.16,11.12 5.27,14.22 5.27,
+                                          14.22C6.67,16.03 8.75,15.9 8.75,15.9L9.46,15C8.21,14.73 7.42,13.62 7.42,13.62C7.42,13.62 9.3,14.9 12,14.9C14.7,14.9 16.58,13.62 16.58,
+                                          13.62C16.58,13.62 15.79,14.73 14.54,15L15.25,15.9C15.25,15.9 17.33,16.03 18.73,14.22C18.73,14.22 18.84,11.12 17.12,7.53C17.12,
+                                          7.53 15.59,6.36 13.9,6.33L13.73,6.5C13.73,6.5 15.53,7.03 16.56,7.95C16.56,7.95 14.68,6.8 12,6.8M9.93,10.59C10.58,10.59 11.11,
+                                          11.16 11.1,11.86C11.1,12.55 10.58,13.13 9.93,13.13C9.29,13.13 8.77,12.55 8.77,11.86C8.77,11.16 9.28,10.59 9.93,10.59M14.1,10.59C14.75,
+                                          10.59 15.27,11.16 15.27,11.86C15.27,12.55 14.75,13.13 14.1,13.13C13.46,13.13 12.94,12.55 12.94,11.86C12.94,11.16 13.45,10.59 14.1,10.59Z" />
+                                </Canvas>
+                            </Viewbox>
+
+                            <Button x:Name="DiscordButton" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" Click="DiscordButton_Click" >
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Button.MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="35" To="38" Storyboard.TargetProperty="Width" Storyboard.TargetName="Discord" Duration="0:0:0.1"></DoubleAnimation>
+                                                <DoubleAnimation From="35" To="38" Storyboard.TargetProperty="Height" Storyboard.TargetName="Discord" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+
+                                    <EventTrigger RoutedEvent="Button.MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="38" To="35" Storyboard.TargetProperty="Width" Storyboard.TargetName="Discord" Duration="0:0:0.1"></DoubleAnimation>
+                                                <DoubleAnimation From="38" To="35" Storyboard.TargetProperty="Height" Storyboard.TargetName="Discord" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="Exit" Width="35" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="913,-440,0,0" CornerRadius="6" BorderThickness="0" BorderBrush="White" Background="#2e2e2e" Opacity="1">
+                        <Grid>
+                            <Viewbox x:Name="NavigationExitIcon1" Width="28" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
+                                <Canvas Width="24" Height="24">
+                                    <Path Data="M8,3C6.89,3 6,3.89 6,5V21H18V5C18,3.89 17.11,3 16,3H8M8,5H16V19H8V5M13,11V13H15V11H13Z" Fill="White" />
+                                </Canvas>
+                            </Viewbox>
+                            <Viewbox x:Name="NavigationExitIcon2" Width="28" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-9,0,0,0" Opacity="0">
+                                <Canvas Width="24" Height="24">
+                                    <Path Data="M12,3C10.89,3 10,3.89 10,5H3V19H2V21H22V19H21V5C21,3.89 20.11,3 19,3H12M12,5H19V19H12V5M5,11H7V13H5V11Z" Fill="White" />
+                                </Canvas>
+                            </Viewbox>
+                            <Button x:Name="ExitButton" Width="25" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" Click="NavigationExitButton_Click">
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Button.MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="NavigationExitIcon1" Duration="0:0:0.1"></DoubleAnimation>
+                                                <DoubleAnimation From="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="NavigationExitIcon2" Duration="0:0:0.2"></DoubleAnimation>
+
+                                                <DoubleAnimation From="35" To="38" Storyboard.TargetProperty="Width" Storyboard.TargetName="Exit" Duration="0:0:0.1"></DoubleAnimation>
+                                                <DoubleAnimation From="35" To="38" Storyboard.TargetProperty="Height" Storyboard.TargetName="Exit" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+
+                                    <EventTrigger RoutedEvent="Button.MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="NavigationExitIcon1" Duration="0:0:0.2"></DoubleAnimation>
+                                                <DoubleAnimation From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="NavigationExitIcon2" Duration="0:0:0.1"></DoubleAnimation>
+
+                                                <DoubleAnimation From="38" To="35" Storyboard.TargetProperty="Width" Storyboard.TargetName="Exit" Duration="0:0:0.1"></DoubleAnimation>
+                                                <DoubleAnimation From="38" To="35" Storyboard.TargetProperty="Height" Storyboard.TargetName="Exit" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+
+                        </Grid>
+                    </Border>
+
+                </Grid>
+            </Border>
+
+            <Border Width="230" Height="537" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,740,0" Background="#1f1f1f">
+                <Grid>
+                    <Border Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-300,0,0" Background="#2e2e2e" CornerRadius="14" BorderThickness="4" BorderBrush="Black">
+                        <Grid>
+
+                            <mcheads:Head x:Name="ControlAvatarImage" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Visibility="Visible"/>
+                            <Border Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Transparent" CornerRadius="14" BorderThickness="4" BorderBrush="Black"/>
+
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="NavigationServersBackground" Width="165" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,0" Background="#2e2e2e" CornerRadius="6">
+                        <Grid>
+                            <Viewbox Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-130,0,0,0">
+                                <Canvas Width="24" Height="24">
+                                    <Path Data="M14,14H7V16H14M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M17,10H7V12H17V10Z" Fill="White" />
+                                </Canvas>
+                            </Viewbox>
+                            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Content="Локации" FontSize="16" Foreground="White" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                            <Button x:Name="NavigationServersButton" Width="160" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" Click="NavigationServersButton_Click">
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Button.MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="165" To="180" Storyboard.TargetProperty="Width" Storyboard.TargetName="NavigationServersBackground" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+
+                                    <EventTrigger RoutedEvent="Button.MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="180" To="165" Storyboard.TargetProperty="Width" Storyboard.TargetName="NavigationServersBackground" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="NavigationProfileBackground" Width="165" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,125,0,0" Background="#2e2e2e" CornerRadius="6">
+                        <Grid>
+                            <Viewbox x:Name="ControlProfileIcon" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-130,0,0,0">
+                                <Canvas Width="24" Height="24">
+                                    <Path Data="M20 22H4V20C4 17.8 7.6 16 12 16S20 17.8 20 20M8 9H16V10C16 12.2 14.2 14 12 14S8 12.2 8 10M19 4C18.4 4 18 4.4 18 5V6H16.5L15.1 3C15 2.8 14.9 2.6 14.7 2.5C14.2 2 13.4 1.9 12.7 2.2L12 2.4L11.3 2.1C10.6 1.8 9.8 1.9 9.3 2.4C9.1 2.6 9 2.8 8.9 3L7.5 6H6V5C6 4.4 5.6 4 5 4S4 4.4 4 5V6C4 7.1 4.9 8 6 8H18C19.1 8 20 7.1 20 6V5C20 4.5 19.6 4 19 4Z" Fill="White" />
+                                </Canvas>
+                            </Viewbox>
+                            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Content="Профиль" FontSize="16" Foreground="White" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                            <Button x:Name="NavigationProfileButton" Width="160" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" Click="NavigationProfileButton_Click">
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Button.MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="165" To="180" Storyboard.TargetProperty="Width" Storyboard.TargetName="NavigationProfileBackground" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+
+                                    <EventTrigger RoutedEvent="Button.MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="180" To="165" Storyboard.TargetProperty="Width" Storyboard.TargetName="NavigationProfileBackground" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="NavigationShopBackground" Width="165" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,245,0,0" Background="#2e2e2e" CornerRadius="6">
+                        <Grid>
+                            <Viewbox Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-130,0,0,0">
+                                <Canvas Width="24" Height="24">
+                                    <Path Data="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,
+                                              2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 
+                                              7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,
+                                              5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,
+                                              22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z" Fill="White" />
+                                </Canvas>
+                            </Viewbox>
+                            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,1,0,0" Content="Магазин" FontSize="16" Foreground="White" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                            <Button x:Name="NavigationShopButton" Width="160" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" Click="NavigationShopButton_Click">
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Button.MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="165" To="180" Storyboard.TargetProperty="Width" Storyboard.TargetName="NavigationShopBackground" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+
+                                    <EventTrigger RoutedEvent="Button.MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="180" To="165" Storyboard.TargetProperty="Width" Storyboard.TargetName="NavigationShopBackground" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="NavigationNewsBackground" Width="165" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,365,0,0" Background="#2e2e2e" CornerRadius="6">
+                        <Grid>
+                            <Viewbox Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-130,0,0,0">
+                                <Canvas Width="24" Height="24">
+                                    <Path Data="M20,11H4V8H20M20,15H13V13H20M20,19H13V17H20M11,19H4V13H11M20.33,4.67L18.67,3L17,4.67L15.33,3L13.67,4.67L12,3L10.33,4.67L8.67,3L7,4.67L5.33,3L3.67,4.67L2,3V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V3L20.33,4.67Z" Fill="White" />
+                                </Canvas>
+                            </Viewbox>
+                            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,1,0,0" Content="Новости" FontSize="16" Foreground="White" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                            <Button x:Name="NavigationNewsButton" Width="160" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" Click="NavigationNewsButton_Click">
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Button.MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="165" To="180" Storyboard.TargetProperty="Width" Storyboard.TargetName="NavigationNewsBackground" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+
+                                    <EventTrigger RoutedEvent="Button.MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="180" To="165" Storyboard.TargetProperty="Width" Storyboard.TargetName="NavigationNewsBackground" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </Grid>
+                    </Border>
+
+                </Grid>
+            </Border>
+
+            <Border Width="610" Height="537" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="170,0,0,0" Background="#1f1f1f" Opacity="1" Visibility="Visible">
+                <Grid>
+                    <StackPanel x:Name="Servers" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" Opacity="1" Visibility="Visible">
+                        <Viewbox Height="25"/>
+                        <Border x:Name="ServersVanilla" Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="1">
+                            <Border.Effect>
+                                <DropShadowEffect x:Name="ServersVanillaShadow" Color="#FFFCB94F" Direction="270" ShadowDepth="0" Opacity="0" RenderingBias="Quality" BlurRadius="15"/>
+                            </Border.Effect>
+                            <Grid>
+                                <Image x:Name="ServersVanillaWallpaper" Width="560" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0.7" Source="WallpaperVanilla.jpg"/>
+                                <Border Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Transparent" BorderThickness="4" BorderBrush="Black" CornerRadius="8"/>
+                                <Border x:Name="ServersVanillaMask" Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Black" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="0.7"/>
+                                <Grid x:Name="ServersVanillaInfo">
+                                    <Border Width="70" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="478,-60,0,0" BorderBrush="Black" BorderThickness="2" Background="White" CornerRadius="5">
+                                        <Label x:Name="ServersVanillaPlayers" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-3,0,0" Content="Выкл." FontSize="14" Foreground="Black" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                                    </Border>
+                                </Grid>
+                                <Button x:Name="ServersVanillaButton" Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" IsEnabled="False" Click="ServersVanillaButton_Click" MouseEnter="ServersVanillaButton_MouseEnter" MouseLeave="ServersVanillaButton_MouseLeave">
+                                    <Button.Triggers>
+                                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation From="560" To="630" DecelerationRatio="1" Storyboard.TargetProperty="Width" Storyboard.TargetName="ServersVanillaWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                    <DoubleAnimation From="0.7" To="1" DecelerationRatio="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersVanillaWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                    <DoubleAnimation From="0" To="0.8" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersVanillaShadow" Duration="0:0:0.2"></DoubleAnimation>
+                                                    <DoubleAnimation From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersVanillaInfo" Duration="0:0:0.1"></DoubleAnimation>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+
+                                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation From="630" To="560" Storyboard.TargetProperty="Width" Storyboard.TargetName="ServersVanillaWallpaper" Duration="0:0:0.1"></DoubleAnimation>
+                                                    <DoubleAnimation From="1" To="0.7" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersVanillaWallpaper" Duration="0:0:0.3"></DoubleAnimation>
+                                                    <DoubleAnimation From="0.8" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersVanillaShadow" Duration="0:0:0.2"></DoubleAnimation>
+                                                    <DoubleAnimation From="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersVanillaInfo" Duration="0:0:0.1"></DoubleAnimation>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                            </Grid>
+                        </Border>
+                        <Viewbox Height="15"/>
+                        <Border x:Name="ServersHardcore" Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="1">
+                            <Border.Effect>
+                                <DropShadowEffect x:Name="ServersHardcoreShadow" Color="#FFFCB94F" Direction="270" ShadowDepth="0" Opacity="0" RenderingBias="Quality" BlurRadius="15"/>
+                            </Border.Effect>
+                            <Grid>
+                                <Image x:Name="ServersHardcoreWallpaper" Width="560" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0.7" Source="WallpaperHardcore.jpg"/>
+                                <Border Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Transparent" BorderThickness="4" BorderBrush="Black" CornerRadius="8"/>
+                                <Border x:Name="ServersHardcoreMask" Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Black" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="0.7"/>
+                                <Grid x:Name="ServersHardcoreInfo">
+                                    <Border Width="70" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="478,-60,0,0" BorderBrush="Black" BorderThickness="2" Background="White" CornerRadius="5">
+                                        <Label x:Name="ServersHardcorePlayers" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-3,0,0" Content="Выкл." FontSize="14" Foreground="Black" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold" />
+                                    </Border>
+                                </Grid>
+                                <Button x:Name="ServersHardcoreButton" Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" IsEnabled="False" Click="ServersHardcoreButton_Click" MouseEnter="ServersHardcoreButton_MouseEnter" MouseLeave="ServersHardcoreButton_MouseLeave">
+                                    <Button.Triggers>
+                                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation From="560" To="630" DecelerationRatio="1" Storyboard.TargetProperty="Width" Storyboard.TargetName="ServersHardcoreWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                    <DoubleAnimation From="0.7" To="1" DecelerationRatio="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersHardcoreWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                    <DoubleAnimation From="0" To="0.8" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersHardcoreShadow" Duration="0:0:0.2"></DoubleAnimation>
+                                                    <DoubleAnimation From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersHardcoreInfo" Duration="0:0:0.1"></DoubleAnimation>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+
+                                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation From="630" To="560" Storyboard.TargetProperty="Width" Storyboard.TargetName="ServersHardcoreWallpaper" Duration="0:0:0.1"></DoubleAnimation>
+                                                    <DoubleAnimation From="1" To="0.7" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersHardcoreWallpaper" Duration="0:0:0.3"></DoubleAnimation>
+                                                    <DoubleAnimation From="0.8" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersHardcoreShadow" Duration="0:0:0.2"></DoubleAnimation>
+                                                    <DoubleAnimation From="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersHardcoreInfo" Duration="0:0:0.1"></DoubleAnimation>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                            </Grid>
+                        </Border>
+                        <Viewbox Height="15"/>
+                        <Border x:Name="ServersMinigames" Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="1">
+                            <Border.Effect>
+                                <DropShadowEffect x:Name="ServersMinigamesShadow" Color="#FFFCB94F" Direction="270" ShadowDepth="0" Opacity="0" RenderingBias="Quality" BlurRadius="15"/>
+                            </Border.Effect>
+                            <Grid>
+                                <Image x:Name="ServersMinigamesWallpaper" Width="560" Height="430" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0.6" Source="WallpaperMinigames.jpg"  />
+                                <Border Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Transparent" BorderThickness="4" BorderBrush="Black" CornerRadius="8"/>
+                                <Border x:Name="ServersMinigamesMask" Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Black" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="0.7"/>
+                                <Border Width="70" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="478,-60,0,0" BorderBrush="Black" BorderThickness="2" Background="White" CornerRadius="5">
+                                    <Label x:Name="ServersMinigamesPlayers" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-3,0,0" Content="Выкл." FontSize="14" Foreground="Black" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold" />
+                                </Border>
+                                <Button x:Name="ServersMinigamesButton" Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" IsEnabled="False" Click="ServersMinigamesButton_Click">
+                                    <Button.Triggers>
+                                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation From="560" To="630" DecelerationRatio="1" Storyboard.TargetProperty="Width" Storyboard.TargetName="ServersMinigamesWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                    <DoubleAnimation From="0.6" To="1" DecelerationRatio="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersMinigamesWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+
+                                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation From="630" To="560" Storyboard.TargetProperty="Width" Storyboard.TargetName="ServersMinigamesWallpaper" Duration="0:0:0.1"></DoubleAnimation>
+                                                    <DoubleAnimation From="1" To="0.6" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersMinigamesWallpaper" Duration="0:0:0.3"></DoubleAnimation>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                            </Grid>
+                        </Border>
+                        <Viewbox Height="15"/>
+                        <Border x:Name="ServersRoleplay" Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="1">
+                            <Border.Effect>
+                                <DropShadowEffect x:Name="ServersRoleplayShadow" Color="#FFFCB94F" Direction="270" ShadowDepth="0" Opacity="0" RenderingBias="Quality" BlurRadius="15"/>
+                            </Border.Effect>
+                            <Grid>
+                                <Image x:Name="ServersRoleplayWallpaper" Width="560" Height="430" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0.6" Source="WallpaperRoleplay.jpg" />
+                                <Border Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Transparent" BorderThickness="4" BorderBrush="Black" CornerRadius="8"/>
+                                <Border x:Name="ServersRoleplayMask" Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Black" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="0.7"/>
+                                <Border Width="70" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="478,-60,0,0" BorderBrush="Black" BorderThickness="2" Background="White" CornerRadius="5">
+                                    <Label x:Name="ServersRoleplayPlayers" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-3,0,0" Content="Выкл." FontSize="14" Foreground="Black" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                                </Border>
+                                <Button x:Name="ServersRoleplayButton" Width="566" Height="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" IsEnabled="False">
+                                    <Button.Triggers>
+                                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation From="560" To="630" DecelerationRatio="1" Storyboard.TargetProperty="Width" Storyboard.TargetName="ServersRoleplayWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                    <DoubleAnimation From="0.6" To="1" DecelerationRatio="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersRoleplayWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+
+                                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation From="630" To="560" Storyboard.TargetProperty="Width" Storyboard.TargetName="ServersRoleplayWallpaper" Duration="0:0:0.1"></DoubleAnimation>
+                                                    <DoubleAnimation From="1" To="0.6" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ServersRoleplayWallpaper" Duration="0:0:0.3"></DoubleAnimation>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                            </Grid>
+                        </Border>
+                        <Viewbox Height="25"/>
+                    </StackPanel>
+
+                    <Grid x:Name="Profile" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" Opacity="0" IsEnabled="False" Visibility="Hidden">
+                        <StackPanel>
+                            <Viewbox Height="15"/>
+                            <Border Width="566" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Transparent" CornerRadius="6" >
+                                <Grid>
+                                    <Border Width="425" Height="46" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,-68,0,0" Background="#2e2e2e" CornerRadius="6" BorderThickness="3" BorderBrush="Black">
+                                        <Grid>
+                                            <Label HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0" Content="Никнейм:" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold" FontSize="20" Foreground="White"/>
+                                            <TextBlock x:Name="ProfileNicknameTextBlock" Width="295" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="110,0,0,0" Text="Guest" Background="Transparent" Foreground="Gray" FontSize="20" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="Regular"/>
+                                        </Grid>
+                                    </Border>
+
+                                    <Border Width="425" Height="46" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,68,0,0" Background="#2e2e2e" CornerRadius="6" BorderThickness="3" BorderBrush="Black">
+                                        <Grid>
+                                            <Label HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0" Content="Привелегия:" FontSize="20" Foreground="White" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                                            <TextBlock x:Name="ProfileDonateTextBlock" Width="260" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="141,0,0,0" Text="Игрок" Background="Transparent" Foreground="Gray" FontSize="20" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="Regular" />
+                                        </Grid>
+                                    </Border>
+
+                                    <Border x:Name="ProfileAvatar" Width="117" Height="117" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" CornerRadius="9" Background="#2e2e2e" BorderThickness="3" BorderBrush="Black">
+                                        <Grid>
+                                            <mcheads:Head x:Name="ProfileAvatarImage" Width="130" Height="130" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
+                                            <Border Width="117" Height="117" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Transparent" BorderBrush="Black" BorderThickness="3" CornerRadius="9"/>
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                            </Border>
+
+                            <Viewbox Height="3"/>
+
+                            <Border Width="566" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" CornerRadius="6" BorderThickness="3" BorderBrush="Black">
+                                <Grid>
+                                    <Label HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0" Content="UUID:" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold" FontSize="20" Foreground="White"/>
+                                    <TextBlock x:Name="ProfileUUIDTextBlock" Width="465" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="75,0,0,0" Background="Transparent" Foreground="Gray" FontSize="20" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="Regular" />
+                                </Grid>
+                            </Border>
+
+                            <Viewbox Height="20"/>
+
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="272" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" CornerRadius="6" BorderThickness="3" BorderBrush="Black">
+                                    <Grid>
+                                        <Label HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0" Content="Валюта:" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold" FontSize="20" Foreground="White"/>
+                                        <TextBlock x:Name="ProfileMoneyTextBlock" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="100,0,0,0" Background="Transparent" Foreground="Gray" FontSize="20" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="Regular" />
+                                    </Grid>
+                                </Border>
+
+                                <Viewbox Width="22"/>
+
+                                <Border Width="272" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" CornerRadius="6" BorderThickness="3" BorderBrush="Black">
+                                    <Grid>
+                                        <Label HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0" Content="Уровень:" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold" FontSize="20" Foreground="White"/>
+                                        <TextBlock x:Name="ProfileLevelTextBlock" Width="140" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="108,0,0,0" Background="Transparent" Foreground="Gray" FontSize="20" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="Regular" />
+                                    </Grid>
+                                </Border>
+                            </StackPanel>
+
+                            <Viewbox Height="20"/>
+
+                            <Border Width="566" Height="197" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" BorderBrush="Black" BorderThickness="3" CornerRadius="6">
+                                <Grid>
+                                    <TextBlock x:Name="ProfileDescriptionTextBlock" Width="535" Height="180" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Text="Для того, чтобы изменить свой скин, зайдите на сервер и введите команду:&#10;/skin set &lt;ник&gt; или /skin set &lt;ссылка на скин&gt;" TextWrapping="Wrap" Background="Transparent" Foreground="Gray" FontSize="20" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold" />
+                                </Grid>
+                            </Border>
+                            <Viewbox Height="35"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <StackPanel x:Name="Shop" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" Opacity="0" Visibility="Hidden" IsEnabled="False">
+                        <Viewbox Height="30"/>
+
+                        <StackPanel Width="566" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                            <Border x:Name="ShopVip" Width="272" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="1">
+                                <Border.Effect>
+                                    <DropShadowEffect x:Name="ShopVipShadow" Color="#FFFCB94F" Direction="270" ShadowDepth="0" Opacity="0" RenderingBias="Quality" BlurRadius="15"/>
+                                </Border.Effect>
+
+                                <Grid>
+                                    <Image x:Name="ShopVipWallpaper" Width="272" Height="272" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0.7" Source="WallpaperVip.jpg"/>
+
+                                    <Border Width="272" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Transparent" BorderThickness="4" BorderBrush="Black" CornerRadius="8"/>
+                                    <Grid x:Name="ShopVipInfo">
+                                        <Border Width="70" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="186,-95,0,0" BorderBrush="Black" BorderThickness="2" Background="White" CornerRadius="5">
+                                            <Label x:Name="ShopVipPrice" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-3,0,0" Content="1₽" FontSize="14" Foreground="Black" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold" />
+                                        </Border>
+
+                                        <Border x:Name="ShopVipDiscount" Width="80" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-4,-4,0,0" CornerRadius="8,0,8,0" BorderBrush="Black" BorderThickness="4" Background="Red" Visibility="Hidden">
+                                            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-1,0,0" Content="-50%" FontSize="19" Foreground="White" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                                        </Border>
+                                    </Grid>
+
+                                    <Button x:Name="ShopVipButton" Width="272" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0">
+                                        <Button.Triggers>
+                                            <EventTrigger RoutedEvent="Button.MouseEnter">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation From="272" To="302" DecelerationRatio="1" Storyboard.TargetProperty="Width" Storyboard.TargetName="ShopVipWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                        <DoubleAnimation From="0.7" To="1" DecelerationRatio="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopVipWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                        <DoubleAnimation From="0" To="0.8" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopVipShadow" Duration="0:0:0.2"></DoubleAnimation>
+                                                        <DoubleAnimation From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopVipInfo" Duration="0:0:0.1"></DoubleAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+
+                                            <EventTrigger RoutedEvent="Button.MouseLeave">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation From="302" To="272" Storyboard.TargetProperty="Width" Storyboard.TargetName="ShopVipWallpaper" Duration="0:0:0.1"></DoubleAnimation>
+                                                        <DoubleAnimation From="1" To="0.7" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopVipWallpaper" Duration="0:0:0.3"></DoubleAnimation>
+                                                        <DoubleAnimation From="0.8" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopVipShadow" Duration="0:0:0.2"></DoubleAnimation>
+                                                        <DoubleAnimation From="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopVipInfo" Duration="0:0:0.1"></DoubleAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Button.Triggers>
+                                    </Button>
+                                </Grid>
+                            </Border>
+
+                            <Viewbox Width="22"/>
+
+                            <Border x:Name="ShopPremium" Width="272" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="1">
+                                <Border.Effect>
+                                    <DropShadowEffect x:Name="ShopPremiumShadow" Color="#FFFCB94F" Direction="270" ShadowDepth="0" Opacity="0" RenderingBias="Quality" BlurRadius="15"/>
+                                </Border.Effect>
+
+                                <Grid>
+                                    <Image x:Name="ShopPremiumWallpaper" Width="272" Height="272" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0.7" Source="WallpaperPremium.jpg"/>
+
+                                    <Border Width="272" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Transparent" BorderThickness="4" BorderBrush="Black" CornerRadius="8"/>
+                                    <Grid x:Name="ShopPremiumInfo">
+                                        <Border Width="70" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="186,-95,0,0" BorderBrush="Black" BorderThickness="2" Background="White" CornerRadius="5">
+                                            <Label x:Name="ShopPremiumPrice" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-3,0,0" Content="1₽" FontSize="14" Foreground="Black" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold" />
+                                        </Border>
+
+                                        <Border x:Name="ShopPremiumDiscount" Width="80" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-4,-4,0,0" CornerRadius="8,0,8,0" BorderBrush="Black" BorderThickness="4" Background="Red" Visibility="Hidden">
+                                            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-1,0,0" Content="-50%" FontSize="19" Foreground="White" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                                        </Border>
+                                    </Grid>
+
+                                    <Button x:Name="ShopPremiumButton" Width="272" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0">
+                                        <Button.Triggers>
+                                            <EventTrigger RoutedEvent="Button.MouseEnter">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation From="272" To="302" DecelerationRatio="1" Storyboard.TargetProperty="Width" Storyboard.TargetName="ShopPremiumWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                        <DoubleAnimation From="0.7" To="1" DecelerationRatio="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopPremiumWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                        <DoubleAnimation From="0" To="0.8" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopPremiumShadow" Duration="0:0:0.2"></DoubleAnimation>
+                                                        <DoubleAnimation From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopPremiumInfo" Duration="0:0:0.1"></DoubleAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+
+                                            <EventTrigger RoutedEvent="Button.MouseLeave">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation From="302" To="272" Storyboard.TargetProperty="Width" Storyboard.TargetName="ShopPremiumWallpaper" Duration="0:0:0.1"></DoubleAnimation>
+                                                        <DoubleAnimation From="1" To="0.7" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopPremiumWallpaper" Duration="0:0:0.3"></DoubleAnimation>
+                                                        <DoubleAnimation From="0.8" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopPremiumShadow" Duration="0:0:0.2"></DoubleAnimation>
+                                                        <DoubleAnimation From="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopPremiumInfo" Duration="0:0:0.1"></DoubleAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Button.Triggers>
+                                    </Button>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+
+                        <Viewbox Height="26"/>
+
+                        <StackPanel Width="566" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                            <Border x:Name="ShopUltra" Width="272" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="1">
+                                <Border.Effect>
+                                    <DropShadowEffect x:Name="ShopUltraShadow" Color="#FFFCB94F" Direction="270" ShadowDepth="0" Opacity="0" RenderingBias="Quality" BlurRadius="15"/>
+                                </Border.Effect>
+
+                                <Grid>
+                                    <Image x:Name="ShopUltraWallpaper" Width="272" Height="272" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0.7" Source="WallpaperUltra.jpg"/>
+
+                                    <Border Width="272" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Transparent" BorderThickness="4" BorderBrush="Black" CornerRadius="8"/>
+                                    <Grid x:Name="ShopUltraInfo">
+                                        <Border Width="70" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="186,-95,0,0" BorderBrush="Black" BorderThickness="2" Background="White" CornerRadius="5">
+                                            <Label x:Name="ShopUltraPrice" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-3,0,0" Content="1₽" FontSize="14" Foreground="Black" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                                        </Border>
+
+                                        <Border x:Name="ShopUltraDiscount" Width="80" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-4,-4,0,0" CornerRadius="8,0,8,0" BorderBrush="Black" BorderThickness="4" Background="Red" Visibility="Hidden">
+                                            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-1,0,0" Content="-50%" FontSize="19" Foreground="White" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                                        </Border>
+                                    </Grid>
+
+                                    <Button x:Name="ShopUltraButton" Width="272" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0">
+                                        <Button.Triggers>
+                                            <EventTrigger RoutedEvent="Button.MouseEnter">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation From="272" To="302" DecelerationRatio="1" Storyboard.TargetProperty="Width" Storyboard.TargetName="ShopUltraWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                        <DoubleAnimation From="0.7" To="1" DecelerationRatio="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopUltraWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                        <DoubleAnimation From="0" To="0.8" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopUltraShadow" Duration="0:0:0.2"></DoubleAnimation>
+                                                        <DoubleAnimation From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopUltraInfo" Duration="0:0:0.1"></DoubleAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+
+                                            <EventTrigger RoutedEvent="Button.MouseLeave">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation From="302" To="272" Storyboard.TargetProperty="Width" Storyboard.TargetName="ShopUltraWallpaper" Duration="0:0:0.1"></DoubleAnimation>
+                                                        <DoubleAnimation From="1" To="0.7" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopUltraWallpaper" Duration="0:0:0.3"></DoubleAnimation>
+                                                        <DoubleAnimation From="0.8" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopUltraShadow" Duration="0:0:0.2"></DoubleAnimation>
+                                                        <DoubleAnimation From="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopUltraInfo" Duration="0:0:0.1"></DoubleAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Button.Triggers>
+                                    </Button>
+                                </Grid>
+                            </Border>
+
+                            <Viewbox Width="22"/>
+
+                            <Border x:Name="ShopSupreme" Width="272" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="1">
+                                <Border.Effect>
+                                    <DropShadowEffect x:Name="ShopSupremeShadow" Color="#FFFCB94F" Direction="270" ShadowDepth="0" Opacity="0" RenderingBias="Quality" BlurRadius="15"/>
+                                </Border.Effect>
+
+                                <Grid>
+                                    <Image x:Name="ShopSupremeWallpaper" Width="272" Height="272" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0.7" Source="WallpaperSupreme.jpg"/>
+
+                                    <Border Width="272" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Transparent" BorderThickness="4" BorderBrush="Black" CornerRadius="8"/>
+
+                                    <Grid x:Name="ShopSupremeInfo">
+                                        <Border Width="70" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="186,-95,0,0" BorderBrush="Black" BorderThickness="2" Background="White" CornerRadius="5">
+                                            <Label x:Name="ShopSupremePrice" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-3,0,0" Content="1₽" FontSize="14" Foreground="Black" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                                        </Border>
+
+                                        <Border x:Name="ShopSupremeDiscount" Width="80" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-4,-4,0,0" CornerRadius="8,0,8,0" BorderBrush="Black" BorderThickness="4" Background="Red" Visibility="Hidden">
+                                            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-1,0,0" Content="-50%" FontSize="19" Foreground="White" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                                        </Border>
+                                    </Grid>
+
+                                    <Button x:Name="ShopSupremeButton" Width="272" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0">
+                                        <Button.Triggers>
+                                            <EventTrigger RoutedEvent="Button.MouseEnter">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation From="272" To="302" DecelerationRatio="1" Storyboard.TargetProperty="Width" Storyboard.TargetName="ShopSupremeWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                        <DoubleAnimation From="0.7" To="1" DecelerationRatio="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopSupremeWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                        <DoubleAnimation From="0" To="0.8" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopSupremeShadow" Duration="0:0:0.2"></DoubleAnimation>
+                                                        <DoubleAnimation From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopSupremeInfo" Duration="0:0:0.1"></DoubleAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+
+                                            <EventTrigger RoutedEvent="Button.MouseLeave">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation From="302" To="272" Storyboard.TargetProperty="Width" Storyboard.TargetName="ShopSupremeWallpaper" Duration="0:0:0.1"></DoubleAnimation>
+                                                        <DoubleAnimation From="1" To="0.7" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopSupremeWallpaper" Duration="0:0:0.3"></DoubleAnimation>
+                                                        <DoubleAnimation From="0.8" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopSupremeShadow" Duration="0:0:0.2"></DoubleAnimation>
+                                                        <DoubleAnimation From="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopSupremeInfo" Duration="0:0:0.1"></DoubleAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Button.Triggers>
+                                    </Button>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+
+                        <Viewbox Height="26"/>
+
+                        <Border x:Name="ShopNexus" Width="566" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="1">
+                            <Border.Effect>
+                                <DropShadowEffect x:Name="ShopNexusShadow" Color="#FFFCB94F" Direction="270" ShadowDepth="0" Opacity="0" RenderingBias="Quality" BlurRadius="15"/>
+                            </Border.Effect>
+
+                            <Grid>
+                                <Image x:Name="ShopNexusWallpaper" Width="560" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0.7" Source="WallpaperNexus.jpg"/>
+
+                                <Border Width="566" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Transparent" BorderThickness="4" BorderBrush="Black" CornerRadius="8"/>
+                                <Grid x:Name="ShopNexusInfo">
+                                    <Border Width="70" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="478,-90,0,0" BorderBrush="Black" BorderThickness="2" Background="White" CornerRadius="5">
+                                        <Label x:Name="ShopNexusPrice" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-3,0,0" Content="1₽" FontSize="14" Foreground="Black" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold" />
+                                    </Border>
+
+                                    <Border x:Name="ShopNexusDiscount" Width="80" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-4,-4,0,0" CornerRadius="8,0,8,0" BorderBrush="Black" BorderThickness="4" Background="Red" Visibility="Hidden">
+                                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-1,0,0" Content="-50%" FontSize="19" Foreground="White" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                                    </Border>
+                                </Grid>
+
+                                <Button x:Name="ShopNexusButton" Width="566" Height="141.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0">
+                                    <Button.Triggers>
+                                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation From="560" To="630" DecelerationRatio="1" Storyboard.TargetProperty="Width" Storyboard.TargetName="ShopNexusWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                    <DoubleAnimation From="0.7" To="1" DecelerationRatio="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopNexusWallpaper" Duration="0:0:0.8"></DoubleAnimation>
+                                                    <DoubleAnimation From="0" To="0.8" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopNexusShadow" Duration="0:0:0.2"></DoubleAnimation>
+                                                    <DoubleAnimation From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopNexusInfo" Duration="0:0:0.1"></DoubleAnimation>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+
+                                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation From="630" To="560" Storyboard.TargetProperty="Width" Storyboard.TargetName="ShopNexusWallpaper" Duration="0:0:0.1"></DoubleAnimation>
+                                                    <DoubleAnimation From="1" To="0.7" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopNexusWallpaper" Duration="0:0:0.3"></DoubleAnimation>
+                                                    <DoubleAnimation From="0.8" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopNexusShadow" Duration="0:0:0.2"></DoubleAnimation>
+                                                    <DoubleAnimation From="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ShopNexusInfo" Duration="0:0:0.1"></DoubleAnimation>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                            </Grid>
+                        </Border>
+
+                        <Viewbox Height="30"/>
+                    </StackPanel>
+
+                    <ScrollViewer x:Name="News" Height="477" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" Visibility="Hidden" IsEnabled="False" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
+                        <Grid>
+
+                            <StackPanel>
+
+                                <Border x:Name="News1" Width="566" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="1">
+                                    <Grid>
+                                        <StackPanel Width="526" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,15,0,0">
+                                            <TextBlock x:Name="News1TitleTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Text="Ошибка!" Foreground="White" FontSize="21" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                                            <TextBlock x:Name="News1SubtitleTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Foreground="Gray" FontSize="14" Padding="0,5,0,20"/>
+                                            <TextBlock x:Name="News1TextTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Padding="0,0,0,15" TextWrapping="Wrap" Foreground="White" FontSize="16" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="Regular"/>
+                                            <TextBlock x:Name="News1DateTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Foreground="Gray" FontSize="14" Padding="0,0,0,15"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+
+                                <Viewbox Height="30"/>
+
+                                <Border x:Name="News2" Width="566" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="1">
+                                    <Grid>
+                                        <StackPanel Width="526" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,15,0,0">
+                                            <TextBlock x:Name="News2TitleTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Text="Ошибка!" Foreground="White" FontSize="21" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                                            <TextBlock x:Name="News2SubtitleTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Foreground="Gray" FontSize="14" Padding="0,5,0,20"/>
+                                            <TextBlock x:Name="News2TextTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Padding="0,0,0,15" Foreground="White" TextWrapping="Wrap" FontSize="16" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="Regular"/>
+                                            <TextBlock x:Name="News2DateTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Foreground="Gray" FontSize="14" Padding="0,0,0,15"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+
+                                <Viewbox Height="30"/>
+
+                                <Border x:Name="News3" Width="566" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" BorderThickness="4" BorderBrush="Black" CornerRadius="8" Opacity="1">
+                                    <Grid>
+                                        <StackPanel Width="526" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,15,0,0">
+                                            <TextBlock x:Name="News3TitleTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Text="Ошибка!" Foreground="White" FontSize="21" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                                            <TextBlock x:Name="News3SubtitleTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Foreground="Gray" FontSize="14" Padding="0,5,0,20"/>
+                                            <TextBlock x:Name="News3TextTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Padding="0,0,0,15" Foreground="White" TextWrapping="Wrap" FontSize="16" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="Regular"/>
+                                            <TextBlock x:Name="News3DateTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Foreground="Gray" FontSize="14" Padding="0,0,0,15"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+
+                            </StackPanel>
+                        </Grid>
+                    </ScrollViewer>
+
+
+                </Grid>
+            </Border>
+
+            <Border x:Name="ProgressMinecraft" Width="180" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#e06b15" CornerRadius="14" BorderThickness="4" BorderBrush="Black" Visibility="Hidden" IsEnabled="False" Opacity="0">
+                <Grid>
+                    <TextBlock x:Name="ProgressMinecraftTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Text="Загрузка..."  TextAlignment="Center" Foreground="White" TextWrapping="Wrap" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold" FontSize="20"/>
+                </Grid>
+            </Border>
+
+
+
+        </Grid>
+    </Border>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <TextBlock x:Key="MainCursor" Cursor="Resources/main.cur"/>
+            <TextBlock x:Key="FocusCursor" Cursor="Resources/focus.cur"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+</Window>
+
+

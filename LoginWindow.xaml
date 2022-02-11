@@ -1,0 +1,170 @@
+﻿<Window x:Class="TensorMine.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TensorMine" xmlns:mcheads="clr-namespace:leMaik.McHeads;assembly=leMaik.McHeads"
+        mc:Ignorable="d"
+        Title="TensorMine : Авторизация"
+        Width="300" Height="540"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" Initialized="Window_Initialized" MouseLeftButtonDown="Window_Movement" Closed="Window_Closed">
+
+    <Border Width="300" Height="540" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Black" CornerRadius="10">
+        <Grid>
+
+            <Border HorizontalAlignment="Center" VerticalAlignment="Center" Margin="270,-510,0,0">
+                <Grid>
+                    <Viewbox x:Name="ExitIcon" Width="20" Height="20" RenderTransformOrigin="0.5, 0.5">
+                        <Viewbox.RenderTransform>
+                            <RotateTransform x:Name="ExitIconTransform" />
+                        </Viewbox.RenderTransform>
+
+                        <Canvas Width="24" Height="24">
+                            <Path Fill="White" Data="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+                        </Canvas>
+                    </Viewbox>
+                    <Button x:Name="ExitButton" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" Click="ExitButton_Click">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Button.MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="20" To="24" Storyboard.TargetProperty="Width" Storyboard.TargetName="ExitIcon" Duration="0:0:0.1"></DoubleAnimation>
+                                        <DoubleAnimation From="20" To="24" Storyboard.TargetProperty="Height" Storyboard.TargetName="ExitIcon" Duration="0:0:0.1"></DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="Button.MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="24" To="20" Storyboard.TargetProperty="Width" Storyboard.TargetName="ExitIcon" Duration="0:0:0.1"></DoubleAnimation>
+                                        <DoubleAnimation From="24" To="20" Storyboard.TargetProperty="Height" Storyboard.TargetName="ExitIcon" Duration="0:0:0.1"></DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border Width="240" Height="540" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#1f1f1f">
+                <Grid>
+
+                    <Border Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-300,0,0" Background="#2e2e2e" CornerRadius="14" BorderThickness="4" BorderBrush="Black">
+                        <Grid>
+                            <Viewbox Width="130" Height="130">
+                                <Canvas Width="24" Height="24">
+                                    <Path Fill="#F9822A" Data="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L6.04,7.5L12,10.85L17.96,7.5L12,4.15M5,15.91L11,19.29V12.58L5,9.21V15.91M19,15.91V9.21L13,12.58V19.29L19,15.91Z" />
+                                </Canvas>
+                            </Viewbox>
+                            <Border Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="Transparent" CornerRadius="14" BorderThickness="4" BorderBrush="Black"/>
+                        </Grid>
+                    </Border>
+
+                    <Grid x:Name="NicknameBox" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-10,0,0">
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,-60,0,0" Text="Никнейм:" TextAlignment="Left" FontSize="10" Foreground="Gray" Background="Transparent"/>
+                        <Border Width="200" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" CornerRadius="6">
+                            <Grid>
+                                <TextBox x:Name="NicknameTextBox" Width="185" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextAlignment="Left" FontSize="20" Foreground="White" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold" Background="Transparent" BorderThickness="0" MaxLength="20"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                    <Grid x:Name="PasswordBox" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,140,0,0">
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,-60,0,0" Text="Пароль:" TextAlignment="Left" FontSize="10" Foreground="Gray" Background="Transparent"/>
+                        <Border Width="200" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Background="#2e2e2e" CornerRadius="6">
+                            <Grid>
+                                <PasswordBox x:Name="PasswordTextBox" Width="185" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" PasswordChar="•" FontSize="20" Foreground="White" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold" Background="Transparent" BorderThickness="0" MaxLength="25"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                    <Border x:Name="LoginBackground" Width="165" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,400,0,0" Background="#2e2e2e" CornerRadius="6">
+                        <Grid>
+                            <Viewbox x:Name="LoginIcon" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-130,0,0,0">
+                                <Canvas Width="24" Height="24">
+                                    <Path Fill="White" Data="M14,12L10,8V11H2V13H10V16M20,18V6C20,4.89 19.1,4 18,4H6A2,2 0 0,0 4,6V9H6V6H18V18H6V15H4V18A2,2 0 0,0 6,20H18A2,2 0 0,0 20,18Z" />
+                                </Canvas>
+                            </Viewbox>
+
+                            <Viewbox x:Name="LoginIconChecked" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-130,0,0,0" Visibility="Hidden">
+                                <Canvas Width="24" Height="24">
+                                    <Path Fill="White" Data="M19,19H5V5H15V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V11H19M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z" />
+                                </Canvas>
+                            </Viewbox>
+
+                            <Viewbox x:Name="LoginIconUnchecked" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-130,0,0,0" Visibility="Hidden">
+                                <Canvas Width="24" Height="24">
+                                    <Path Fill="White" Data="M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V5H19V19M17,8.4L13.4,12L17,15.6L15.6,17L12,13.4L8.4,17L7,15.6L10.6,12L7,8.4L8.4,7L12,10.6L15.6,7L17,8.4Z" />
+                                </Canvas>
+                            </Viewbox>
+
+                            <Viewbox x:Name="LoginIconUpdate" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-130,0,0,0" Visibility="Hidden" RenderTransformOrigin="0.5, 0.5">
+                                <Viewbox.RenderTransform>
+                                    <RotateTransform x:Name="noFreeze" />
+                                </Viewbox.RenderTransform>
+                                <Viewbox.Triggers>
+                                    <EventTrigger RoutedEvent="Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="(Viewbox.RenderTransform).(RotateTransform.Angle)" To="-360" Duration="0:0:0.8" RepeatBehavior="Forever" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Viewbox.Triggers>
+                                <Canvas Width="24" Height="24">
+                                    <Path Fill="White" Data="M12,18A6,6 0 0,1 6,12C6,11 6.25,10.03 6.7,9.2L5.24,7.74C4.46,8.97 4,10.43 4,12A8,8 0 0,0 12,20V23L16,19L12,15M12,4V1L8,5L12,9V6A6,6 0 0,1 18,12C18,13 17.75,13.97 17.3,14.8L18.76,16.26C19.54,15.03 20,13.57 20,12A8,8 0 0,0 12,4Z" />
+                                </Canvas>
+                            </Viewbox>
+
+                            <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Content="Войти" FontSize="16" Foreground="White" FontFamily="/TensorMine;component/Resources/#Gilroy" FontWeight="SemiBold"/>
+                            <Button x:Name="LoginButton" Width="160" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" Click="LoginButton_Click">
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Button.MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="165" To="180" Storyboard.TargetProperty="Width" Storyboard.TargetName="LoginBackground" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+
+                                    <EventTrigger RoutedEvent="Button.MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation From="180" To="165" Storyboard.TargetProperty="Width" Storyboard.TargetName="LoginBackground" Duration="0:0:0.1"></DoubleAnimation>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="HintBox" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,470,0,0">
+                        <Grid>
+                            <TextBlock x:Name="HintTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Text="Нет аккаунта? - Зарегистрируйтесь!" Foreground="Gray" FontSize="9"/>
+                            <Button x:Name="HintButton" Width="150" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Opacity="0" Click="HintButton_Click" MouseEnter="HintButton_MouseEnter" MouseLeave="HintButton_MouseLeave"/>
+                        </Grid>
+                    </Border>
+
+                </Grid>
+            </Border>
+
+
+
+        </Grid>
+    </Border>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <TextBlock x:Key="MainCursor" Cursor="Resources/main.cur"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+</Window>
+
+
