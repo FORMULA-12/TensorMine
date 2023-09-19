@@ -1,3 +1,3 @@
-![alt text](https://i.imgur.com/E18ZHxN.png)
-![alt text](https://i.imgur.com/uGlMaEc.png)
-![alt text](https://imgur.com/CdYsKwv)
+![Image](https://i.imgur.com/E18ZHxN.png)
+![Image](https://i.imgur.com/uGlMaEc.png)
+![Image](https://imgur.com/CdYsKwv.png)
